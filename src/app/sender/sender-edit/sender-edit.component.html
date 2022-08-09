@@ -1,0 +1,84 @@
+<div class="row">
+    <div class="col-xs-12">
+        <button class="btn btn-danger" (click)="onBack()">Back</button>
+        <br>
+        <br>
+        <form [formGroup]="senderForm" (ngSubmit)="onSubmit()">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input class="form-control" type="text" id="name" formControlName="name" placeholder="Insert name">
+                        <span *ngIf="!senderForm.get('name')?.valid && senderForm.get('name')?.touched"
+                            class="help-block">
+                            <span *ngIf="senderForm.get('name').errors['required']">This field is required!</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="form-group">
+                        <label>Company</label>
+                        <input class="form-control" type="text" id="company" formControlName="company" placeholder="Insert company">
+                        <span *ngIf="!senderForm.get('company')?.valid && senderForm.get('company')?.touched"
+                            class="help-block">
+                            <span *ngIf="senderForm.get('company').errors['required']">This field is required!</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="form-group">
+                        <label>Company Adress</label>
+                        <input class="form-control" type="text" id="companyAdress" formControlName="companyAdress" placeholder="Insert company adress">
+                        <span *ngIf="!senderForm.get('companyAdress')?.valid && senderForm.get('companyAdress')?.touched"
+                            class="help-block">
+                            <span *ngIf="senderForm.get('companyAdress').errors['required']">This field is required!</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="form-group">
+                        <label>City</label>
+                        <input class="form-control" type="text" id="city" formControlName="city" placeholder="Insert city">
+                        <span *ngIf="!senderForm.get('city')?.valid && senderForm.get('city')?.touched"
+                            class="help-block">
+                            <span *ngIf="senderForm.get('city').errors['required']">This field is required!</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="form-group">
+                        <label>Country</label>
+                        <input class="form-control" type="text" id="country" formControlName="country" placeholder="Insert country">
+                        <span *ngIf="!senderForm.get('country')?.valid && senderForm.get('country')?.touched"
+                            class="help-block">
+                            <span *ngIf="senderForm.get('country').errors['required']">This field is required!</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <input class="form-control" type="number" id="phone" formControlName="phone" placeholder="Insert phone">
+                        <span *ngIf="!senderForm.get('phone')?.valid && senderForm.get('phone')?.touched"
+                            class="help-block">
+                            <span *ngIf="senderForm.get('phone').errors['required']">This field is required!</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <button class="btn btn-primary" type="submit" [disabled]="!senderForm.valid">{{ editMode ? 'Update Sender' : 'Add Sender'}}</button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,44 @@
+<div class="mainContainer">
+    <br><br>
+    <div class="row">
+        <button *ngIf="stepOne1" class="btn btn-primary" (click)="onClickStepOne()">1. Create Account</button>
+        <app-loading-spinner *ngIf="stepTwo1"></app-loading-spinner>
+        <button *ngIf="stepThree1" class="btn btn-success">Step 1 - Done</button>
+        <br><br>
+            
+    </div>
+    <div class="row">
+        <button *ngIf="stepOne2" class="btn btn-primary" (click)="onClickStepTwo()">2. Log Into App</button>
+        <app-loading-spinner *ngIf="stepTwo2"></app-loading-spinner>
+        <button *ngIf="stepThree2" class="btn btn-success">Step 2 - Done</button>
+        <br><br>
+    </div>
+        
+    <div class="row">
+        <button *ngIf="stepOne3" class="btn btn-primary" (click)="onClickStepThree()">3. Create Sender</button>
+        <app-loading-spinner *ngIf="stepTwo3"></app-loading-spinner>
+        <button *ngIf="stepThree3" class="btn btn-success">Step 3 - Done</button>
+        <br><br>
+    </div>
+    <div class="row">
+        <button *ngIf="stepOne4" class="btn btn-primary" (click)="onClickStepFour()">4. Create Recipient</button>
+        <app-loading-spinner *ngIf="stepTwo4"></app-loading-spinner>
+        <button *ngIf="stepThree4" class="btn btn-success">Step 4 - Done</button>
+        <br><br>
+    </div>
+    <div class="row">
+        <button *ngIf="stepOne5" class="btn btn-primary" (click)="onClickStepFive()">5. Create Invoice</button>
+        <app-loading-spinner *ngIf="stepTwo5"></app-loading-spinner>
+        <button *ngIf="stepThree5" class="btn btn-success">Step 5 - Done</button>
+        <br><br>
+    </div>
+    <div class="row">
+        <button *ngIf="stepOne6" class="btn btn-primary" (click)="onClickStepSix()">6. Download or send it by email</button>
+        <app-loading-spinner *ngIf="stepTwo6"></app-loading-spinner>
+        <button *ngIf="stepThree6" class="btn btn-success">Step 6 - Done</button>
+        <br><br>
+    </div>
+</div>
+
+
+

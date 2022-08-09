@@ -1,0 +1,27 @@
+<router-outlet></router-outlet>
+<div *ngIf="!routingRecipients">
+  <button class="btn btn-success" (click)="onAddRecipient()">Add Recipient</button> |
+  <button class="btn btn-secondary" (click)="onSend()">Send Recipients</button> |
+  <button class="btn btn-secondary" (click)="onFetch()">Fetch Recipients</button>
+  <br>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Recipient ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Company</th>
+        <th scope="col">Country</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let recipientEl of recipients; let i=index">
+        <th scope="row">{{recipientEl.id}}</th>
+        <td><a [routerLink]="['/recipients/',recipientEl.id]">{{recipientEl.name}}</a></td>
+        <td>{{recipientEl.company}}</td>
+        <td>{{recipientEl.country}}</td>
+        <td><a style="cursor: pointer;" (click)="onRemoveRecipient(recipientEl.id)">Remove</a> | <a style="cursor: pointer;"
+            [routerLink]="['/recipients/'+ recipientEl.id+'/edit']">Edit</a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

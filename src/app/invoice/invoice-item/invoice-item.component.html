@@ -1,0 +1,95 @@
+<button class="btn btn-danger" (click)="onBack()">Back</button> |
+<button class="btn btn-success" [routerLink]="['/invoices/'+ invoice.id+'/edit']">Edit</button>
+
+
+<br>
+<br>
+<div class="row">
+  <div class="col-xs-12">
+    <div class="form-group" class="text-left">
+      <label>
+        <h4><strong>ID:</strong> {{invoice.id}}</h4>
+      </label><br>
+      <label>
+        <h4><strong>Created:</strong> {{invoice.created}}</h4>
+      </label><br>
+      <label>
+        <h4><strong>Pay to:</strong> {{invoice.deadline}}</h4>
+      </label><br>
+      <div class="form-group">
+      </div>
+      <div class="pull-right">
+        <button type="button" class="btn btn-primary" (click)="onFileSelected($event)">Send Invocie By Email</button> | 
+         <button class="btn btn-warning btn" (click)="onDownload()">Download This Invoice</button>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="row">From</th>
+      <th>To</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td scope="row">{{invoice.sender.name}}</td>
+      <td scope="row">{{invoice.recipient.name}}</td>
+    </tr>
+    <tr>
+      <td scope="row">{{invoice.sender.company}}</td>
+      <td scope="row">{{invoice.recipient.company}}</td>
+    </tr>
+    <tr>
+      <td scope="row">{{invoice.sender.companyAdress}}</td>
+      <td scope="row">{{invoice.recipient.companyAdress}}</td>
+    </tr>
+    <tr>
+      <td scope="row">{{invoice.sender.city}}</td>
+      <td scope="row">{{invoice.recipient.city}}</td>
+    </tr>
+    <tr>
+      <td scope="row">{{invoice.sender.country}}</td>
+      <td scope="row">{{invoice.recipient.country}}</td>
+    </tr>
+  </tbody>
+</table>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="row">Description</th>
+      <th scope="row">Qty</th>
+      <th scope="row">Unit Price</th>
+      <th scope="row">Total</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td scope="row">{{invoice.description}}</td>
+      <td>{{invoice.quantity}}</td>
+      <td>{{invoice.salary}}</td>
+      <td>{{totalGross}}</td>
+    </tr>
+    <tr>
+    <tr>
+      <th scope="row"></th>
+      <td></td>
+      <td>Tax Rate</td>
+      <td>{{invoice.tax}}%</td>
+    </tr>
+    <tr>
+      <th scope="row"></th>
+      <td></td>
+      <td>Tax Total</td>
+      <td>{{taxSalary}}</td>
+    </tr>
+    <tr>
+      <th scope="row"></th>
+      <td></td>
+      <td>Salary (net)</td>
+      <td>{{salaryNet}}</td>
+    </tr>
+  </tbody>
+</table>

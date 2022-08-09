@@ -1,0 +1,37 @@
+<button class="btn btn-danger" (click)="onBack()">Back</button>
+<br>
+<br>
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Sender ID</th>
+        <th scope="col">{{sender.id}}</th>    
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">Name</th>
+        <td>{{sender.name}}</td>
+      </tr>
+      <tr>
+        <th scope="row">Company</th>
+        <td>{{sender.company}}</td>
+      </tr>
+      <tr>
+        <th scope="row">Company Adress</th>
+        <td>{{sender.companyAdress}}</td>
+      </tr>
+      <tr>
+        <th scope="row">City</th>
+        <td>{{sender.city}}</td>
+      </tr>
+      <tr>
+        <th scope="row">Country</th>
+        <td>{{sender.country}}</td>
+      </tr>
+      <tr>
+        <th scope="row">Phone Number</th>
+        <td>{{sender.phoneNumber}}</td>
+      </tr>
+    </tbody>
+  </table>

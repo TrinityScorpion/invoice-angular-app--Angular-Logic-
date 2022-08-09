@@ -1,0 +1,30 @@
+<div *ngIf="!routinginvoices">
+    <button class="btn btn-success" (click)="onAddInvoice()">Add invoice</button> |
+    <button class="btn btn-secondary" (click)="onSend()">Send Invoices</button> |
+    <button class="btn btn-secondary" (click)="onFetch()">Fetch Invoices</button> 
+    <br>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Invoice Number</th>
+          <th scope="col">Created</th>
+          <th scope="col">Description</th>
+          <th scope="col">Sender</th>
+          <th scope="col">Recipient</th>
+        </tr>
+      </thead>    
+      <tbody>
+        <tr *ngFor="let invoiceEl of invoices; let i=index">
+          <th scope="row"><a [routerLink]="['/invoices/',invoiceEl.id]">{{invoiceEl.id}}</a></th>
+          <td>{{invoiceEl.created}}</td>
+          <td>{{invoiceEl.description}}</td>
+          <td>{{invoiceEl.sender.name}}</td>
+          <td>{{invoiceEl.recipient.name}}</td>
+          <td><a style="cursor: pointer;" ngbAutofocus (click)="onRemoveInvoice(invoiceEl.id)">Remove</a> | <a style="cursor: pointer;"
+              [routerLink]="['/invoices/'+ invoiceEl.id+'/edit']">Edit</a></td>
+              
+        </tr>
+      </tbody>
+    </table>
+  </div>
+<router-outlet *ngIf="routinginvoices"></router-outlet>

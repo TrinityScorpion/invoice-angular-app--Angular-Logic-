@@ -1,0 +1,72 @@
+<div class="row">
+    <div class="col-xs-12">
+        <button class="btn btn-danger" (click)="onBack()">Back</button>
+        <br>
+        <br>
+        <form [formGroup]="recipientForm" (ngSubmit)="onSubmit()">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input class="form-control" type="text" id="name" formControlName="name" placeholder="Insert name">
+                        <span *ngIf="!recipientForm.get('name')?.valid && recipientForm.get('name')?.touched"
+                            class="help-block">
+                            <span *ngIf="recipientForm.get('name').errors['required']">This field is required!</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="form-group">
+                        <label>Company</label>
+                        <input class="form-control" type="text" id="company" formControlName="company" placeholder="Insert company">
+                        <span *ngIf="!recipientForm.get('company')?.valid && recipientForm.get('company')?.touched"
+                            class="help-block">
+                            <span *ngIf="recipientForm.get('company').errors['required']">This field is required!</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="form-group">
+                        <label>Company Adress</label>
+                        <input class="form-control" type="text" id="companyAdress" formControlName="companyAdress" placeholder="Insert company adress">
+                        <span *ngIf="!recipientForm.get('companyAdress')?.valid && recipientForm.get('companyAdress')?.touched"
+                            class="help-block">
+                            <span *ngIf="recipientForm.get('companyAdress').errors['required']">This field is required!</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="form-group">
+                        <label>City</label>
+                        <input class="form-control" type="text" id="city" formControlName="city" placeholder="Insert city">
+                        <span *ngIf="!recipientForm.get('city')?.valid && recipientForm.get('city')?.touched"
+                            class="help-block">
+                            <span *ngIf="recipientForm.get('city').errors['required']">This field is required!</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="form-group">
+                        <label>Country</label>
+                        <input class="form-control" type="text" id="country" formControlName="country" placeholder="Insert country">
+                        <span *ngIf="!recipientForm.get('country')?.valid && recipientForm.get('country')?.touched"
+                            class="help-block">
+                            <span *ngIf="recipientForm.get('country').errors['required']">This field is required!</span>
+                        </span>
+                    </div>
+                </div>
+            </div>          
+            <div class="row">
+                <button class="btn btn-primary" type="submit" [disabled]="!recipientForm.valid">{{ editMode ? 'Update recipient' : 'Add recipient'}}</button>
+            </div>
+        </form>
+    </div>
+</div>

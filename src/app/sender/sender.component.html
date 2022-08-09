@@ -1,0 +1,27 @@
+<div *ngIf="!routingSenders">
+  <button class="btn btn-success" (click)="onAddSender()">Add Sender</button> |
+   <button class="btn btn-secondary" (click)="onSend()">Send Senders</button> |
+   <button class="btn btn-secondary" (click)="onFetch()">Fetch Senders</button>
+  <br>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Sender ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Company</th>
+        <th scope="col">Country</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let senderEl of senders; let i=index">
+        <th scope="row">{{senderEl.id}}</th>
+        <td><a [routerLink]="['/senders/',senderEl.id]">{{senderEl.name}}</a></td>
+        <td>{{senderEl.company}}</td>
+        <td>{{senderEl.country}}</td>
+        <td><a style="cursor: pointer;" (click)="onRemoveSender(senderEl.id)">Remove</a> | <a style="cursor: pointer;"
+            [routerLink]="['/senders/'+ senderEl.id+'/edit']">Edit</a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<router-outlet></router-outlet>
